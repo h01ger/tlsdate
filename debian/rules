@@ -21,11 +21,11 @@ override_dh_systemd_enable:
 	dh_systemd_enable tlsdated.service
 		
 override_dh_install:
+	# deploy AppArmor profile
 	cp apparmor-profile debian/tlsdate/etc/apparmor.d/usr.bin.tlsdate
-	# use copy from debian/tlsdated.service as long as upstream file is broken:
-	cp debian/tlsdated.service debian/tlsdate/lib/systemd/system/
 	dh_apparmor --profile-name=usr.bin.tlsdate -ptlsdate
-	
+	# deploy systemd service file
+	cp lsdated.service debian/tlsdate/lib/systemd/system/
 
 override_dh_installchangelogs:
 	dh_installchangelogs
