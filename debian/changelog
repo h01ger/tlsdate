@@ -1,3 +1,10 @@
+tlsdate (0.0.13-1~deb8u1) jessie; urgency=high
+
+  * Upload to stable to switch from www.ptb.de to www.google.com as the former
+    is now sending randomized gmt values. (Closes: #783174, #783193)
+
+ -- Holger Levsen <holger@debian.org>  Sat, 30 May 2015 14:55:55 +0200
+
 tlsdate (0.0.13-1) unstable; urgency=high
 
   * New upstream release
